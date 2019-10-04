@@ -1,0 +1,13 @@
+Prerequisites to run the mutationList.py script: 
+
+Mac user:
+Install homebrew
+python3.7
+Perl 
+GNU GSL library: http://www.gnu.org/software/gsl/
+ENCoM: To compile ENCoM you need a Unix based machine and the GSL library
+	cd ./build
+	make -f Makefile.Unix
+FoldX 
+Modeller
+***More information about script is provided at: python3.7 mutationList.py -h***

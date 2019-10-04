@@ -1,0 +1,43 @@
+﻿
+
+
+example of command line argument:
+python3.7 mutationList.py -i pdb.pdb -r "15-17(mi)" -o output.txt  
+
+
+
+-i		user input, which is in the form of a pdb file
+
+-r		user range of mutation. Could be in the following formats
+
+		possible examples for -r argument:
+		"AUTO": pipeline choses the two most flexible sites based on B-factor value
+		        calculated by ENCOM, then pipeline substitute those positions to 
+		        groups c and m (more information about c and m in the group section)
+		1-25: the positions 1 to 25 to all amino acids
+		7,8,15-21(x): positions 7 and 8 and 15 to 21, 15 to 21 without WT
+		7(RLTF),8(VS): for mentoined position number 
+				only mutate to given Amino Acid in the paranthesis
+				Amino Acid is written with capital letter and SINGLE LETTER FORMAT.
+		6(p): for position 6 mutate to all polar Amino acids.
+		
+			The group of amino Acids are written with small letters
+			the groups can be:
+			p: polar: N(ASN),Q(GLN),R(ARG),K(LYS),D(ASP),E((GLU),H(HIS)  
+			h: hydrophobe: A(ALA),I(ILE),L(LEU),M(MET),F(PHE),V(VAL),W(TRP),C(CYS) 
+			-: negative: D(ASP),E(GLU)
+			+: positive: K(LYS),R(ARG),H(HIS)
+			l: large: W(TRP),F(PHE),H(HIS),Y(TYR),R(ARG),K(LYS) 
+			s: small: G(GLY),A(ALA),D(ASP),C(CYS),S(SER) 
+			a: aromatique: F(PHE),Y(TYR),W(TRP),H(HIS)
+			i: closest substitution in terms of isoelectric point (format<WT:substitution residue>)
+			   AL,LI,RK,KR,NF,MS,DE,FN,CN,PI,QY,SY,ED,TY,YT,GV,WV,HP,IL,VG
+			c: closest substitution in terms of chemical distance
+			   AP,RK,ND,DN,CS,QH,EQ,GP,HQ,IL,LI,KA,MV,FI,PG,SR,TP,WY,YI,VM
+			m: closest substitution in terms of 1 PAM evolutionary distance
+			   AS,RK,NS,DE,CS,QE,ED,GA,HQ,IV,LV,KR,ML,FY,PA,SA,TS,WR,YF,VI
+			x: to not mutate to WT (with no x it will mutate to WT as default)
+
+-o		complete name of output file(should contain .txt)
+
+-h		help
