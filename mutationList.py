@@ -304,11 +304,11 @@ def main():
 	parser.add_argument("-r","--pos", action="store")
 	parser.add_argument("-o","--output_name", action="store")
 	parser.add_argument("-v","--verbose", action="store")
-	args=parser.parse_args()
+    args=parser.parse_args()
 
 
-	pdb_c= clean(args.pdb_nc_input)
-	pdb_repaired=repair()
+    pdb_c= clean(args.pdb_nc_input)
+    pdb_repaired=repair()
     (mutate_pos_list, mutate_to_dict)=mutate_position(args.pos, "pdb_c.pdb")
 
 	individual_list=[]
