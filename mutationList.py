@@ -307,10 +307,9 @@ def main():
 	args=parser.parse_args()
 
 
-	(mutate_pos_list, mutate_to_dict)=mutate_position(args.pos, "pdb_c.pdb")
 	pdb_c= clean(args.pdb_nc_input)
 	pdb_repaired=repair()
-
+    (mutate_pos_list, mutate_to_dict)=mutate_position(args.pos, "pdb_c.pdb")
 
 	individual_list=[]
 	chain=[]
